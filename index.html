@@ -87,9 +87,16 @@
           <p class="text-slate-400 text-base md:text-lg">
             Supporting Level 1 ASD learners in higher and further education by matching cognitive profiles with concrete, low-barrier environmental adaptations.
           </p>
+          <br>
+           
           <!-- Objective Cards -->
+          <h4 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white heading-font leading-tight">
+        Objectives
+          </h4>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+            
             <div class="p-3 bg-slate-800/40 border border-slate-700/50 rounded-xl">
+              
               <span class="text-xs font-bold text-brand-teal uppercase block mb-1">LO1: Analyse</span>
               <p class="text-xs text-slate-300">Identify clinical & cognitive features of Level 1 ASD.</p>
             </div>
@@ -124,7 +131,7 @@
       
       <!-- Footer Metadata -->
       <div class="border-t border-slate-800 pt-6 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-4 mt-6">
-        <div>Presenter: <span class="text-slate-300 font-medium">Peer Educator</span></div>
+        <div>Presenter: <span class="text-slate-300 font-medium">Habeeb Grillo</span></div>
         <div class="flex gap-4">
           <span>⏱️ Duration: 15 Mins</span>
           <span>🏫 Level: Professional Development</span>
@@ -344,7 +351,7 @@
               <div class="w-5 h-5 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-xs mt-0.5 shrink-0">!</div>
               <div>
                 <strong class="text-slate-200 block text-sm">Socio-Interactive Load</strong>
-                <span class="text-slate-400 text-xs">Unstructured group work forces students to simultaneously handle socialization, verbal turn-taking, and cognitive planning.</span>
+                <span class="text-slate-400 text-xs">Unstructured group work forces students to simultaneously handle socialisation, verbal turn-taking, and cognitive planning.</span>
               </div>
             </li>
           </ul>
@@ -484,7 +491,7 @@
         </div>
         <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Commitment-to-Practice Plan Builder</h2>
         <p class="text-slate-400 text-sm">
-          Educators: Select at least one classroom adjustment strategy below that you commit to integrating into your practice tomorrow.
+          Educators: Select at least one classroom adjustment strategy below that you commit to integrating into your practice in the future.
         </p>
       </div>
 
@@ -537,7 +544,7 @@
                 <!-- Selected items will dynamically populate here -->
               </ul>
               <div class="p-3 bg-brand-indigo/10 border border-brand-indigo/20 rounded-lg text-xs text-slate-400">
-                👉 <strong>Your commitment minimizes:</strong> Executive load, communication mismatch (Double Empathy Problem), and sensory fatigue.
+                👉 <strong>Your commitment minimises:</strong> Executive load, communication mismatch (Double Empathy Problem), and sensory fatigue.
               </div>
             </div>
           </div>
@@ -559,12 +566,37 @@
       </div>
     </section>
 
+    <!-- SLIDE 8: Questions & Reflections -->
+<section id="slide-8" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col items-center justify-center text-center min-h-[500px]">
+
+  <div class="max-w-3xl">
+    
+    <h2 class="text-5xl md:text-7xl font-extrabold heading-font text-white mb-8">
+      Questions & Reflections
+    </h2>
+
+    <p class="text-lg md:text-2xl text-slate-300 leading-relaxed">
+      Thank you for participating. Let's take this time to exchange experiences,
+      discuss specific learner profiles, and clarify local institutional referral pathways.
+    </p>
+
+    <div class="mt-12">
+      <span class="inline-block px-6 py-2 bg-brand-purple/20 border border-brand-purple/40 text-brand-purple rounded-full text-sm font-semibold uppercase tracking-wider">
+        Open Discussion
+      </span>
+    </div>
+
+  </div>
+
+</section>
+   
+      
   </main>
 
   <!-- Presenter Notes Bottom Toggle Panel -->
   <footer class="w-full bg-slate-900/95 border-t border-slate-800 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
     <!-- Presenter Notes Toggle Button -->
-    <button onclick="togglePresenterNotes()" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition-all">
+    <button id="presenter-button" onclick="togglePresenterNotes()" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition-all">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
       <span>Toggle Presenter Notes Script</span>
     </button>
@@ -601,26 +633,26 @@
   <!-- Client Logic -->
   <script>
     let currentSlideIndex = 1;
-    const totalSlidesCount = 7;
+    const totalSlidesCount = 8;
     const selectedStrategies = new Set();
 
     // Slide definitions with Timing details and Speaker Scripts
     const slidesData = {
       1: {
         timing: "⏱️ Timing: (0:00 - 1:30)",
-        script: `"Hello everyone, and welcome to this 15-minute micro-teach session. Today we are focusing on a highly prevalent but often misunderstood area of special educational needs and disability (SEND): Mild Autism, clinically classified as Level 1 Autism Spectrum Disorder (ASD). Our goal today is to bridge the gap between clinical diagnoses and practical, everyday classroom delivery. By the end of this short session, we will understand how to implement Universal Design layouts, analyze cognitive processing structures, and map out daily practical strategies that support every neurodiverse individual."`
+        script: `"Hello everyone, and welcome to this 15-minute micro-teach session. Today we are focusing on a highly prevalent but often misunderstood area of special educational needs and disability (SEND): Mild Autism, clinically classified as Level 1 Autism Spectrum Disorder (ASD). Our goal today is to bridge the gap between clinical diagnoses and practical, everyday classroom delivery. By the end of this short session, we will understand how to implement Universal Design layouts, analyse cognitive processing structures, and map out daily practical strategies that support every neurodiverse individual."`
       },
       2: {
         timing: "⏱️ Timing: (1:30 - 3:15) [Interactive Activity]",
-        script: `"To launch our active learning path, let us perform a rapid diagnostic check of our own cognitive assumptions. The term 'mild autism' is frequently misunderstood by professionals. I have compiled 4 central statements representing current insights and historical biases. As educators, please look at these statements and analyze which are clinical truths versus institutional myths. Note that 'mild' refers to the physical level of support needed to complete tasks independently, not to the degree of internal cognitive and sensory fatigue experienced by the student."`
+        script: `"To launch our active learning path, let us perform a rapid diagnostic check of our own cognitive assumptions. The term 'mild autism' is frequently misunderstood by professionals. I have compiled 4 central statements representing current insights and historical biases. As educators, please look at these statements and analyse which are clinical truths versus institutional myths. Note that 'mild' refers to the physical level of support needed to complete tasks independently, not to the degree of internal cognitive and sensory fatigue experienced by the student."`
       },
       3: {
         timing: "⏱️ Timing: (3:15 - 5:45)",
-        script: `"Let's begin by defining our focus. While we historically used labels like Asperger's syndrome, the current diagnostic manual (DSM-5) categorizes this as Autism Spectrum Disorder Level 1, or autism with low support needs. The term 'mild' is often misleading. It refers to the level of external support physically required to live independently, not the internal cognitive strain the student experiences. Autistic students often 'mask'—they exhaust immense mental energy trying to copy neurotypical behaviors to blend in. This leads to what we call 'autistic burnout' or sudden overwhelm. In the classroom, this manifests across three main fields: social interaction, communication style, and sensory sensitivity."`
+        script: `"Let's begin by defining our focus. While we historically used labels like Asperger's syndrome, the current diagnostic manual (DSM-5) categorises this as Autism Spectrum Disorder Level 1, or autism with low support needs. The term 'mild' is often misleading. It refers to the level of external support physically required to live independently, not the internal cognitive strain the student experiences. Autistic students often 'mask'—they exhaust immense mental energy trying to copy neurotypical behaviors to blend in. This leads to what we call 'autistic burnout' or sudden overwhelm. In the classroom, this manifests across three main fields: social interaction, communication style, and sensory sensitivity."`
       },
       4: {
         timing: "⏱️ Timing: (5:45 - 8:00)",
-        script: `"To adjust our practice, we must understand how an autistic brain processes information. These learners often display incredible hyper-focus, logical processing, and systemic organization when working within their interests. However, they face significant barriers in executive functioning. This is the brain's command center—it manages planning, sequencing, organizing tasks, and shifting attention. An assignment prompt like 'write a short essay on a topic of your choice' can paralyze an autistic learner because the lack of structure creates too many decisions at once. Furthermore, we must remember Damian Milton’s 'Double Empathy Problem': communication breakdowns in the classroom are mutual. The student does not simply have a deficit; rather, neurotypical educators and neurodivergent students have different communication styles that require active, mutual translation."`
+        script: `"To adjust our practice, we must understand how an autistic brain processes information. These learners often display incredible hyper-focus, logical processing, and systemic organisation when working within their interests. However, they face significant barriers in executive functioning. This is the brain's command center—it manages planning, sequencing, organizing tasks, and shifting attention. An assignment prompt like 'write a short essay on a topic of your choice' can paralyze an autistic learner because the lack of structure creates too many decisions at once. Furthermore, we must remember Damian Milton’s 'Double Empathy Problem': communication breakdowns in the classroom are mutual. The student does not simply have a deficit; rather, neurotypical educators and neurodivergent students have different communication styles that require active, mutual translation."`
       },
       5: {
         timing: "⏱️ Timing: (8:00 - 10:30)",
@@ -628,12 +660,16 @@
       },
       6: {
         timing: "⏱️ Timing: (10:30 - 12:30)",
-        script: `"Now, let’s scale this up to our organization. We have brilliant central support frameworks, like Learning Support Agreements and dedicated inclusion offices. However, these services can sometimes be reactive, relying on a formal medical diagnosis before support is unlocked. This leaves many undiagnosed, struggling students behind. Recent government SEND reforms dictate a strong child-first policy. Our institutional area of improvement lies in moving away from a deficit model—where we try to fix the student—and toward a social model of disability, where we change the environment. I recommend that we implement Universal Design for Learning, or UDL, which builds flexibility into the curriculum for all students, reducing the need for retrofitted, specialized accommodations."`
+        script: `"Now, let’s scale this up to our organisation. We have brilliant central support frameworks, like Learning Support Agreements and dedicated inclusion offices. However, these services can sometimes be reactive, relying on a formal medical diagnosis before support is unlocked. This leaves many undiagnosed, struggling students behind. Recent government SEND reforms dictate a strong child-first policy. Our institutional area of improvement lies in moving away from a deficit model—where we try to fix the student—and toward a social model of disability, where we change the environment. I recommend that we implement Universal Design for Learning, or UDL, which builds flexibility into the curriculum for all students, reducing the need for retrofitted, specialized accommodations."`
       },
       7: {
         timing: "⏱️ Timing: (12:30 - 15:00) [Interactive Activity]",
-        script: `"To conclude our micro-teach session, we move from theory to interactive pledge. On this dashboard, you can build your personal Commitment-to-Practice Plan. Please select the low-barrier classroom adjustments you commit to executing in your courses this upcoming week. As you click on each strategy, the planner visualizes how these support structures minimize cognitive load, bypass the Double Empathy communication barrier, and stave off sensory fatigue. Let us open the floor to questions and gather your reflections on your generated pledges."`
-      }
+        script: `"To conclude our micro-teach session, we move from theory to interactive pledge. On this dashboard, you can build your personal Commitment-to-Practice Plan. Please select the low-barrier classroom adjustments you commit to executing in your courses this upcoming week. As you click on each strategy, the planner visualizes how these support structures minimise cognitive load, bypass the Double Empathy communication barrier, and stave off sensory fatigue. Let us open the floor to questions and gather your reflections on your generated pledges."`
+      },
+8: {
+  timing: "⏱️ Timing: (15:00+) [Discussion & Reflection]",
+  script: `"Thank you for participating in today's micro-teach session. We will now open the floor for questions, reflections, and professional discussion. Please feel free to share experiences from your own classrooms, discuss specific learner profiles you have supported, and raise any questions regarding referral pathways, reasonable adjustments, SEND processes, or inclusive practice. The aim is to leave today with practical strategies that can immediately enhance learner engagement and accessibility."`
+}
     };
 
     // Keyboard navigation
@@ -651,7 +687,7 @@
       if (answer.classList.contains('hidden')) {
         answer.classList.remove('hidden');
         card.classList.add('border-brand-teal', 'bg-slate-800');
-        badge.innerText = "Analyzed";
+        badge.innerText = "Analysed";
         badge.className = "p-1.5 bg-brand-teal text-white text-xs font-bold shrink-0 rounded-lg";
       } else {
         answer.classList.add('hidden');
@@ -732,12 +768,26 @@
       notify.classList.add('hidden');
     }
 
-    // Toggle Presenter notes drawer
-    function togglePresenterNotes() {
-      const drawer = document.getElementById('notes-drawer');
-      drawer.classList.toggle('hidden');
+    // Toggle Presenter notes drawer with password
+    let presenterAuthenticated = false;
+
+function togglePresenterNotes() {
+
+  if (!presenterAuthenticated) {
+
+		const password = prompt("Restricted Area:");
+    
+    if (password !== "pass22") {
+      alert("Incorrect password.");
+      return;
     }
 
+    presenterAuthenticated = true;
+  }
+
+  const drawer = document.getElementById('notes-drawer');
+  drawer.classList.toggle('hidden');
+}
     // Dynamic Navigation System
     function updateSlide() {
       // Hide all slides
