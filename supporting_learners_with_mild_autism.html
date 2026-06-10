@@ -1,1 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-teach: Supporting Learners with Mild Autism (Level 1 ASD)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config for Palette -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1E293B',
+              indigo: '#4F46E5',
+              teal: '#0D9488',
+              emerald: '#059669',
+              gold: '#D97706',
+              purple: '#7C3AED',
+              bgLight: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .heading-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .slide-active {
+      display: flex !important;
+    }
+  </style>
+</head>
+<body class="bg-brand-navy text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-brand-teal selection:text-white">
 
+  <!-- Header / Progress Bar -->
+  <header class="w-full bg-slate-900/80 backdrop-blur border-b border-slate-800 px-6 py-4 flex justify-between items-center z-10">
+    <div class="flex items-center gap-3">
+      <div class="w-3 h-3 rounded-full bg-brand-teal animate-pulse"></div>
+      <span class="text-xs font-semibold uppercase tracking-widest text-slate-400">Micro-Teach Session</span>
+    </div>
+    <div class="hidden md:block text-center">
+      <span class="text-sm font-bold text-slate-200 heading-font">Adjusting Practice for Mild Autism (Level 1 ASD)</span>
+    </div>
+    <div class="text-right">
+      <span class="text-xs text-brand-teal font-mono" id="slide-number">Slide 1 of 7</span>
+    </div>
+  </header>
+
+  <!-- Progress Indicator -->
+  <div class="w-full bg-slate-800 h-1.5">
+    <div id="progress-bar" class="bg-gradient-to-r from-brand-teal to-brand-indigo h-1.5 transition-all duration-300" style="width: 14.28%"></div>
+  </div>
+
+  <!-- Main Slide Deck Container -->
+  <main class="flex-grow flex items-center justify-center p-4 md:p-8 relative">
+    
+    <!-- Navigation Overlay Hotspots (Left/Right) for Touch/Click -->
+    <button onclick="prevSlide()" class="absolute left-2 md:left-6 z-20 bg-slate-800/80 hover:bg-brand-teal text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-teal" aria-label="Previous Slide">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-2 md:right-6 z-20 bg-slate-800/80 hover:bg-brand-teal text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-teal" aria-label="Next Slide">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- SLIDE 1: Title & Welcome -->
+    <section id="slide-1" class="slide slide-active hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-indigo/20 border border-brand-indigo/30 rounded-full text-brand-indigo text-xs font-semibold uppercase tracking-wider">
+            15-Minute Micro-teach Session
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white heading-font leading-tight">
+            Adjusting Practice for <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-teal to-brand-indigo">Mild Autism</span>
+          </h1>
+          <p class="text-slate-400 text-base md:text-lg">
+            Supporting Level 1 ASD learners in higher and further education by matching cognitive profiles with concrete, low-barrier environmental adaptations.
+          </p>
+          <!-- Objective Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+            <div class="p-3 bg-slate-800/40 border border-slate-700/50 rounded-xl">
+              <span class="text-xs font-bold text-brand-teal uppercase block mb-1">LO1: Analyse</span>
+              <p class="text-xs text-slate-300">Identify clinical & cognitive features of Level 1 ASD.</p>
+            </div>
+            <div class="p-3 bg-slate-800/40 border border-slate-700/50 rounded-xl">
+              <span class="text-xs font-bold text-brand-indigo uppercase block mb-1">LO2: Adjust</span>
+              <p class="text-xs text-slate-300">Explore low-barrier, high-impact strategies.</p>
+            </div>
+            <div class="p-3 bg-slate-800/40 border border-slate-700/50 rounded-xl">
+              <span class="text-xs font-bold text-brand-purple uppercase block mb-1">LO3: Evaluate</span>
+              <p class="text-xs text-slate-300">Assess institutional & SEND reform frameworks.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive Title Graphic -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+            <!-- Decorative concentric glowing circles -->
+            <div class="absolute inset-0 bg-brand-teal/10 rounded-full blur-3xl"></div>
+            <div class="absolute w-72 h-72 border border-slate-800 rounded-full animate-[spin_40s_linear_infinite]"></div>
+            <div class="absolute w-56 h-56 border-2 border-dashed border-brand-indigo/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+            <!-- Neurodivergence Infinity Symbol in clean vectors -->
+            <svg class="w-32 h-32 text-brand-teal relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 12c-2-2.67-4-4-6-4a4 4 0 100 8c2 0 4-1.33 6-4zm0 0c2 2.67 4 4 6 4a4 4 0 100-8c-2 0-4 1.33-6 4z" />
+            </svg>
+            <div class="absolute bottom-8 text-center">
+              <span class="text-xs text-slate-400">Audience: Academic Colleagues & Educators</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Metadata -->
+      <div class="border-t border-slate-800 pt-6 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-4 mt-6">
+        <div>Presenter: <span class="text-slate-300 font-medium">Peer Educator</span></div>
+        <div class="flex gap-4">
+          <span>⏱️ Duration: 15 Mins</span>
+          <span>🏫 Level: Professional Development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Interactive Starter (Fact vs Myth) -->
+    <section id="slide-2" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 bg-brand-gold/20 border border-brand-gold/40 text-brand-gold rounded-full text-xs font-semibold uppercase tracking-wider">Interactive Starter</span>
+          <span class="text-slate-500 text-xs">Activity Duration: 2 Mins</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Fact or Myth: Challenging Assumptions</h2>
+        <p class="text-slate-400 text-sm">
+          Before we explore clinical profiles, click on each statement below to reveal the actual science based on current neurodivergent clinical insights.
+        </p>
+      </div>
+
+      <!-- Live Interactive Panel -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        
+        <!-- Interactive Card 1 -->
+        <div onclick="toggleStarterCard(1)" id="starter-card-1" class="cursor-pointer group p-5 bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-brand-teal rounded-xl transition-all duration-300">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <span class="text-xs font-mono text-slate-500 uppercase">Statement A</span>
+              <p class="text-slate-200 font-semibold mt-1 text-sm md:text-base">"Mild autism means the individual experiences mild, low-impact difficulties in their daily academic tasks."</p>
+            </div>
+            <div id="starter-badge-1" class="p-1.5 bg-slate-700 rounded-lg text-slate-400 text-xs font-bold shrink-0">Click To Reveal</div>
+          </div>
+          <div id="starter-answer-1" class="hidden mt-4 pt-4 border-t border-slate-700/50 text-xs md:text-sm text-slate-300 space-y-2">
+            <span class="inline-block px-2 py-0.5 bg-red-500/20 text-red-400 border border-red-500/30 rounded font-bold uppercase text-xs">MYTH</span>
+            <p>
+              <strong>The Reality:</strong> "Mild" refers strictly to the external clinical support categorization (Level 1 vs Level 3). Internally, students experience immense stress, masking their sensory and emotional strain to copy neurotypical behaviors, frequently triggering "autistic burnout."
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Card 2 -->
+        <div onclick="toggleStarterCard(2)" id="starter-card-2" class="cursor-pointer group p-5 bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-brand-teal rounded-xl transition-all duration-300">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <span class="text-xs font-mono text-slate-500 uppercase">Statement B</span>
+              <p class="text-slate-200 font-semibold mt-1 text-sm md:text-base">"Autistic spectrum conditions are highly diverse, and strengths often coexist alongside severe execution blockages."</p>
+            </div>
+            <div id="starter-badge-2" class="p-1.5 bg-slate-700 rounded-lg text-slate-400 text-xs font-bold shrink-0">Click To Reveal</div>
+          </div>
+          <div id="starter-answer-2" class="hidden mt-4 pt-4 border-t border-slate-700/50 text-xs md:text-sm text-slate-300 space-y-2">
+            <span class="inline-block px-2 py-0.5 bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30 rounded font-bold uppercase text-xs">FACT</span>
+            <p>
+              <strong>The Reality:</strong> Cognitive strengths such as high attention to detail, systemic logic, and hyper-focus frequently mask severe barriers in executive dysfunction—such as struggling with multi-step directions or unprompted transitions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Card 3 -->
+        <div onclick="toggleStarterCard(3)" id="starter-card-3" class="cursor-pointer group p-5 bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-brand-teal rounded-xl transition-all duration-300">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <span class="text-xs font-mono text-slate-500 uppercase">Statement C</span>
+              <p class="text-slate-200 font-semibold mt-1 text-sm md:text-base">"Communication breakdown is exclusively a deficit of the autistic student."</p>
+            </div>
+            <div id="starter-badge-3" class="p-1.5 bg-slate-700 rounded-lg text-slate-400 text-xs font-bold shrink-0">Click To Reveal</div>
+          </div>
+          <div id="starter-answer-3" class="hidden mt-4 pt-4 border-t border-slate-700/50 text-xs md:text-sm text-slate-300 space-y-2">
+            <span class="inline-block px-2 py-0.5 bg-red-500/20 text-red-400 border border-red-500/30 rounded font-bold uppercase text-xs">MYTH</span>
+            <p>
+              <strong>The Reality:</strong> Damian Milton's "Double Empathy Problem" states that communication breakdown is mutual. Neurotypical educators struggle to read autistic communication styles just as much as autistic students struggle to interpret neurotypical cues.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Card 4 -->
+        <div onclick="toggleStarterCard(4)" id="starter-card-4" class="cursor-pointer group p-5 bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-brand-teal rounded-xl transition-all duration-300">
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <span class="text-xs font-mono text-slate-500 uppercase">Statement D</span>
+              <p class="text-slate-200 font-semibold mt-1 text-sm md:text-base">"Sensory overloads in the learning environment are physiological, not just psychological."</p>
+            </div>
+            <div id="starter-badge-4" class="p-1.5 bg-slate-700 rounded-lg text-slate-400 text-xs font-bold shrink-0">Click To Reveal</div>
+          </div>
+          <div id="starter-answer-4" class="hidden mt-4 pt-4 border-t border-slate-700/50 text-xs md:text-sm text-slate-300 space-y-2">
+            <span class="inline-block px-2 py-0.5 bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30 rounded font-bold uppercase text-xs">FACT</span>
+            <p>
+              <strong>The Reality:</strong> The autistic brain processes physical sensations (sound frequencies, light flickers) directly without unconscious neurotypical filtering mechanisms. Fluorescent hums can feel like physical pain.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <p class="text-xs text-slate-500 italic">Discussion: Let these realities guide our pedagogy. "Mild" refers strictly to physical independence, never to internal ease.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Demystifying Level 1 ASD -->
+    <section id="slide-3" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-teal">Diagnostic & Behavioral Profile</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Demystifying "Mild Autism" (Level 1 ASD)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+        <!-- Grid Item 1: Communication -->
+        <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-brand-teal/20 flex items-center justify-center text-brand-teal">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-200 heading-font">Social Communication</h3>
+          <ul class="space-y-2 text-xs md:text-sm text-slate-400">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-teal">▪</span> Literal interpretations of figurative language.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-teal">▪</span> High cognitive load parsing implicit social rules.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-teal">▪</span> Heavy social energy expended on "masking" behavior.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grid Item 2: Behaviors -->
+        <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-brand-indigo/20 flex items-center justify-center text-brand-indigo">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89M9 11l3 3L22 4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-200 heading-font">Patterns & Routines</h3>
+          <ul class="space-y-2 text-xs md:text-sm text-slate-400">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-indigo">▪</span> Profound need for classroom predictability.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-indigo">▪</span> Intense focus on specific systemic subject areas.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-indigo">▪</span> Dislike of abrupt curriculum and task transitions.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grid Item 3: Sensory -->
+        <div class="p-5 bg-slate-800/40 border border-slate-800 rounded-xl space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center text-brand-purple">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-200 heading-font">Sensory Regulation</h3>
+          <ul class="space-y-2 text-xs md:text-sm text-slate-400">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-purple">▪</span> Hyper-reactivity to sound, light, or tactile triggers.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-purple">▪</span> Hypo-reactivity requiring targeted sensory inputs.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-purple">▪</span> Physical sensory feedback directly controls focus levels.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/30 border-l-4 border-brand-teal p-4 rounded-r-xl">
+        <p class="text-xs md:text-sm text-slate-300">
+          <strong>Key Insight (from DSM-5 Clinical Terminology):</strong> Level 1 ASD refers strictly to needing support but residing fully independently. Do not mistake independence with a lack of internal neurodivergent barriers.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Cognitive & Academic Profiles -->
+    <section id="slide-4" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-indigo">Processing Profiles</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Cognitive Profiles in the Classroom</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
+        <!-- Strengths Panel -->
+        <div class="p-6 bg-slate-800/40 border border-slate-800/80 rounded-xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-brand-emerald/10 text-brand-emerald text-xs font-bold rounded border border-brand-emerald/20">Cognitive Strengths</span>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-emerald/20 flex items-center justify-center text-brand-emerald text-xs mt-0.5 shrink-0">✓</div>
+              <div>
+                <strong class="text-slate-200 block text-sm">Systemic Thinkers</strong>
+                <span class="text-slate-400 text-xs">Unparalleled capacity to trace patterns, process highly complex logic systems, and compile meticulous detail.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-emerald/20 flex items-center justify-center text-brand-emerald text-xs mt-0.5 shrink-0">✓</div>
+              <div>
+                <strong class="text-slate-200 block text-sm">High-Interest Hyperfocus</strong>
+                <span class="text-slate-400 text-xs">Deep research abilities and highly sustained attention when task content aligns with specialized cognitive interests.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Barriers Panel -->
+        <div class="p-6 bg-slate-800/40 border border-slate-800/80 rounded-xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-brand-gold/10 text-brand-gold text-xs font-bold rounded border border-brand-gold/20">Executive Function Barriers</span>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-xs mt-0.5 shrink-0">!</div>
+              <div>
+                <strong class="text-slate-200 block text-sm">Task Sequencing & Initiations</strong>
+                <span class="text-slate-400 text-xs">Struggling with ambiguous prompts (e.g. "pick any topic"). Breaking work down into planning steps is mentally exhausting.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-xs mt-0.5 shrink-0">!</div>
+              <div>
+                <strong class="text-slate-200 block text-sm">Socio-Interactive Load</strong>
+                <span class="text-slate-400 text-xs">Unstructured group work forces students to simultaneously handle socialization, verbal turn-taking, and cognitive planning.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Theory Callout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-brand-indigo/10 border border-brand-indigo/30 p-4 rounded-xl items-center">
+        <div>
+          <span class="text-xs font-mono font-bold text-brand-indigo uppercase">Pedagogical Theory Integration</span>
+          <p class="text-xs text-slate-300 mt-1">
+            <strong>The Double Empathy Problem:</strong> Communication failures in academic settings are shared and mutual—not simply an autistic cognitive deficit.
+          </p>
+        </div>
+        <div class="text-xs text-slate-400 italic md:text-right border-t md:border-t-0 md:border-l border-slate-700/60 pt-2 md:pt-0 md:pl-4">
+          "Educators and students exist across differing cognitive operating frameworks. We must actively build communicative translation scaffolds."
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Classroom Adjustments Do/Instead table -->
+    <section id="slide-5" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-teal">Direct Interventions</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Low-Barrier, High-Impact Adapting</h2>
+      </div>
+
+      <!-- Responsive Comparison Table -->
+      <div class="my-6 overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[600px]">
+          <thead>
+            <tr class="border-b border-slate-800 text-xs text-slate-500 uppercase tracking-wider">
+              <th class="py-3 px-4">Core Focus Area</th>
+              <th class="py-3 px-4 text-red-400 bg-red-500/5">Traditional Pedagogy</th>
+              <th class="py-3 px-4 text-brand-teal bg-brand-teal/5">Universal Design Adaptations</th>
+            </tr>
+          </thead>
+          <tbody class="text-xs md:text-sm divide-y divide-slate-800">
+            <tr>
+              <td class="py-4 px-4 font-bold text-slate-300">Giving Task Instructions</td>
+              <td class="py-4 px-4 text-slate-400 bg-red-500/5">Explaining multi-stage complex academic tasks only verbally.</td>
+              <td class="py-4 px-4 text-slate-200 bg-brand-teal/5 font-medium">Providing structured written checklists and step-by-step visual bullet points.</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-bold text-slate-300">Classroom Transitioning</td>
+              <td class="py-4 px-4 text-slate-400 bg-red-500/5">Abruptly switching activities or ending independent work blocks.</td>
+              <td class="py-4 px-4 text-slate-200 bg-brand-teal/5 font-medium">Predictable clear warnings: "We have 5 minutes before packaging up."</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-bold text-slate-300">Group Structure</td>
+              <td class="py-4 px-4 text-slate-400 bg-red-500/5">Instructing students to dynamically self-select peer groupings.</td>
+              <td class="py-4 px-4 text-slate-200 bg-brand-teal/5 font-medium">Pre-assigned structural teams with defined roles (e.g. Moderator, Timer).</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-bold text-slate-300">Classroom Sensory Map</td>
+              <td class="py-4 px-4 text-slate-400 bg-red-500/5">High-intensity setups: bright direct fluorescent bulbs, cluttered displays.</td>
+              <td class="py-4 px-4 text-slate-200 bg-brand-teal/5 font-medium">Designated low-sensory tables, dimming setups, quiet study lanes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center">
+        <span class="text-xs text-slate-500">Notice: These adaptations remove systemic barriers for autistic brains while improving accessibility for *all* learners.</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Evaluating Frameworks (SWOT) -->
+    <section id="slide-6" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-purple">Institutional Evaluation</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Evaluating Support Frameworks (SWOT)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-6 text-xs md:text-sm">
+        
+        <!-- Strengths -->
+        <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-xl space-y-2">
+          <div class="flex items-center gap-2 text-brand-teal font-extrabold heading-font">
+            <span class="text-lg">S</span> STRENGTHS
+          </div>
+          <p class="text-slate-400">
+            Dedicated central SEND Inclusion teams and formalized learning agreements (EHCPs, support plans).
+          </p>
+        </div>
+
+        <!-- Weaknesses -->
+        <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-xl space-y-2">
+          <div class="flex items-center gap-2 text-brand-gold font-extrabold heading-font">
+            <span class="text-lg">W</span> WEAKNESSES
+          </div>
+          <p class="text-slate-400">
+            Extended administrative waitlists for clinical neurodevelopmental assessments, creating a high-barrier delay.
+          </p>
+        </div>
+
+        <!-- Opportunities -->
+        <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-xl space-y-2">
+          <div class="flex items-center gap-2 text-brand-indigo font-extrabold heading-font">
+            <span class="text-lg">O</span> OPPORTUNITIES
+          </div>
+          <p class="text-slate-400">
+            Transitioning to Universal Design for Learning (UDL) formats natively so retrofits aren't constantly required.
+          </p>
+        </div>
+
+        <!-- Threats -->
+        <div class="p-4 bg-slate-800/40 border border-slate-800 rounded-xl space-y-2">
+          <div class="flex items-center gap-2 text-red-400 font-extrabold heading-font">
+            <span class="text-lg">T</span> THREATS
+          </div>
+          <p class="text-slate-400">
+            Autistic student burnout leading to complete lack of attendance, severe anxiety, and premature withdrawals.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Government Reform Context -->
+      <div class="p-4 bg-slate-900/90 border border-slate-800 rounded-xl">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-purple"></span>
+          <span class="text-xs font-bold text-slate-300">SEND Reform Integration: Putting Learners First</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">
+          Recent legislative frameworks compel schools to pivot to a "student-centered co-design model." Rather than attempting to "cure" or correct autistic behavior, we are legally and ethically obligated to modify our institutional layouts and classroom processes first.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Plenary (Interactive Commitment Action Builder) -->
+    <section id="slide-7" class="slide hidden w-full max-w-5xl bg-slate-900/60 border border-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl flex-col justify-between min-h-[500px]">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 bg-brand-purple/20 border border-brand-purple/40 text-brand-purple rounded-full text-xs font-semibold uppercase tracking-wider">Interactive Plenary</span>
+          <span class="text-slate-500 text-xs">Activity Duration: 3 Mins</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-extrabold heading-font text-white">Commitment-to-Practice Plan Builder</h2>
+        <p class="text-slate-400 text-sm">
+          Educators: Select at least one classroom adjustment strategy below that you commit to integrating into your practice tomorrow.
+        </p>
+      </div>
+
+      <!-- Action Planner Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+        
+        <!-- Strategy Selections -->
+        <div class="space-y-3">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Select Strategies:</label>
+          
+          <button onclick="selectStrategy('visual')" id="btn-visual" class="w-full text-left p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-brand-teal transition-all flex items-center gap-3">
+            <span id="chk-visual" class="w-5 h-5 rounded border border-slate-600 flex items-center justify-center text-xs shrink-0 bg-slate-900 text-transparent">✓</span>
+            <div>
+              <strong class="text-xs md:text-sm text-slate-200 block">Provide Visual Instruction Lists</strong>
+              <span class="text-[10px] md:text-xs text-slate-400">Put checklists on boards alongside verbal directions.</span>
+            </div>
+          </button>
+
+          <button onclick="selectStrategy('transitions')" id="btn-transitions" class="w-full text-left p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-brand-indigo transition-all flex items-center gap-3">
+            <span id="chk-transitions" class="w-5 h-5 rounded border border-slate-600 flex items-center justify-center text-xs shrink-0 bg-slate-900 text-transparent">✓</span>
+            <div>
+              <strong class="text-xs md:text-sm text-slate-200 block">Deliver Time-Structured Warnings</strong>
+              <span class="text-[10px] md:text-xs text-slate-400">Provide 5-minute indicators before task transitions.</span>
+            </div>
+          </button>
+
+          <button onclick="selectStrategy('groups')" id="btn-groups" class="w-full text-left p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-brand-purple transition-all flex items-center gap-3">
+            <span id="chk-groups" class="w-5 h-5 rounded border border-slate-600 flex items-center justify-center text-xs shrink-0 bg-slate-900 text-transparent">✓</span>
+            <div>
+              <strong class="text-xs md:text-sm text-slate-200 block">Pre-Assign Explicit Peer Roles</strong>
+              <span class="text-[10px] md:text-xs text-slate-400">Designate concrete task duties to reduce social anxiety.</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Output Visual Dashboard -->
+        <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono text-slate-500 uppercase">Your Action Plan Blueprint</span>
+            <div id="plan-placeholder" class="text-slate-500 text-xs text-center py-10 italic">
+              Please select at least one educational strategy to generate your visual commitment plan.
+            </div>
+            
+            <div id="plan-output" class="hidden space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald animate-ping"></span>
+                <span class="text-xs font-bold text-slate-300">Active Classroom Adjustments:</span>
+              </div>
+              <ul id="plan-items-list" class="space-y-2 text-xs text-slate-300">
+                <!-- Selected items will dynamically populate here -->
+              </ul>
+              <div class="p-3 bg-brand-indigo/10 border border-brand-indigo/20 rounded-lg text-xs text-slate-400">
+                👉 <strong>Your commitment minimizes:</strong> Executive load, communication mismatch (Double Empathy Problem), and sensory fatigue.
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 mt-4 flex items-center justify-between">
+            <span class="text-[10px] text-slate-500">Reflective Pledge</span>
+            <button onclick="saveCommitment()" class="px-3 py-1.5 bg-brand-teal hover:bg-brand-teal/80 text-white rounded text-xs font-bold transition-all">
+              Save Action Plan
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Saved Notification Overlay Inside Frame (Never use alerts) -->
+      <div id="save-notification" class="hidden bg-brand-emerald/90 text-white text-xs py-2 px-4 rounded-lg shadow-md flex justify-between items-center transition-all">
+        <span>✓ Your micro-teach action plan commitment was saved successfully! Let's build inclusive environments.</span>
+        <button onclick="closeNotification()" class="text-white hover:text-slate-200 font-bold ml-2">×</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Presenter Notes Bottom Toggle Panel -->
+  <footer class="w-full bg-slate-900/95 border-t border-slate-800 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+    <!-- Presenter Notes Toggle Button -->
+    <button onclick="togglePresenterNotes()" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition-all">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <span>Toggle Presenter Notes Script</span>
+    </button>
+
+    <!-- Slide Navigation Controllers -->
+    <div class="flex items-center gap-2">
+      <button onclick="prevSlide()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-xs font-bold transition-all">Prev</button>
+      <div class="flex gap-1" id="pagination-dots">
+        <!-- Interactive slide dots generated by JS -->
+      </div>
+      <button onclick="nextSlide()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-xs font-bold transition-all">Next</button>
+    </div>
+  </footer>
+
+  <!-- Drawer Container for Presenter Notes -->
+  <div id="notes-drawer" class="hidden w-full bg-slate-950 border-t border-slate-800 p-6 space-y-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-brand-teal font-mono text-xs font-bold uppercase tracking-widest">Presenter Notes Transcript</span>
+        <span id="notes-timing" class="text-xs text-slate-500 font-mono">⏱️ Timing: (0:00 - 1:30)</span>
+      </div>
+      <button onclick="togglePresenterNotes()" class="text-slate-500 hover:text-slate-300 text-xl font-bold">&times;</button>
+    </div>
+    
+    <!-- Notes Contents Managed Dynamically by JS based on slide index -->
+    <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl">
+      <p id="notes-content-text" class="text-xs md:text-sm text-slate-300 leading-relaxed italic">
+        Loading speaker script notes...
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Client Logic -->
+  <script>
+    let currentSlideIndex = 1;
+    const totalSlidesCount = 7;
+    const selectedStrategies = new Set();
+
+    // Slide definitions with Timing details and Speaker Scripts
+    const slidesData = {
+      1: {
+        timing: "⏱️ Timing: (0:00 - 1:30)",
+        script: `"Hello everyone, and welcome to this 15-minute micro-teach session. Today we are focusing on a highly prevalent but often misunderstood area of special educational needs and disability (SEND): Mild Autism, clinically classified as Level 1 Autism Spectrum Disorder (ASD). Our goal today is to bridge the gap between clinical diagnoses and practical, everyday classroom delivery. By the end of this short session, we will understand how to implement Universal Design layouts, analyze cognitive processing structures, and map out daily practical strategies that support every neurodiverse individual."`
+      },
+      2: {
+        timing: "⏱️ Timing: (1:30 - 3:15) [Interactive Activity]",
+        script: `"To launch our active learning path, let us perform a rapid diagnostic check of our own cognitive assumptions. The term 'mild autism' is frequently misunderstood by professionals. I have compiled 4 central statements representing current insights and historical biases. As educators, please look at these statements and analyze which are clinical truths versus institutional myths. Note that 'mild' refers to the physical level of support needed to complete tasks independently, not to the degree of internal cognitive and sensory fatigue experienced by the student."`
+      },
+      3: {
+        timing: "⏱️ Timing: (3:15 - 5:45)",
+        script: `"Let's begin by defining our focus. While we historically used labels like Asperger's syndrome, the current diagnostic manual (DSM-5) categorizes this as Autism Spectrum Disorder Level 1, or autism with low support needs. The term 'mild' is often misleading. It refers to the level of external support physically required to live independently, not the internal cognitive strain the student experiences. Autistic students often 'mask'—they exhaust immense mental energy trying to copy neurotypical behaviors to blend in. This leads to what we call 'autistic burnout' or sudden overwhelm. In the classroom, this manifests across three main fields: social interaction, communication style, and sensory sensitivity."`
+      },
+      4: {
+        timing: "⏱️ Timing: (5:45 - 8:00)",
+        script: `"To adjust our practice, we must understand how an autistic brain processes information. These learners often display incredible hyper-focus, logical processing, and systemic organization when working within their interests. However, they face significant barriers in executive functioning. This is the brain's command center—it manages planning, sequencing, organizing tasks, and shifting attention. An assignment prompt like 'write a short essay on a topic of your choice' can paralyze an autistic learner because the lack of structure creates too many decisions at once. Furthermore, we must remember Damian Milton’s 'Double Empathy Problem': communication breakdowns in the classroom are mutual. The student does not simply have a deficit; rather, neurotypical educators and neurodivergent students have different communication styles that require active, mutual translation."`
+      },
+      5: {
+        timing: "⏱️ Timing: (8:00 - 10:30)",
+        script: `"Let's talk about execution. How do we adjust our teaching daily without redesigning our entire curriculum? We focus on predictability, clarity, and sensory control. First, verbal instructions can evaporate. If you give a three-step verbal direction, an autistic learner may lose steps two and three while processing step one. Write instructions down on the board, keep them sequential, and avoid idioms or sarcasm—say exactly what you mean. Second, manage transitions deliberately. Autistic learners thrive on predictability. Give a visual or verbal warning before changing tasks. Third, restructure group work. Do not say, 'get into groups of four.' This is a social minefield. Assign groups and, crucially, assign clear, structured roles so every student knows exactly what their objective contribution must be."`
+      },
+      6: {
+        timing: "⏱️ Timing: (10:30 - 12:30)",
+        script: `"Now, let’s scale this up to our organization. We have brilliant central support frameworks, like Learning Support Agreements and dedicated inclusion offices. However, these services can sometimes be reactive, relying on a formal medical diagnosis before support is unlocked. This leaves many undiagnosed, struggling students behind. Recent government SEND reforms dictate a strong child-first policy. Our institutional area of improvement lies in moving away from a deficit model—where we try to fix the student—and toward a social model of disability, where we change the environment. I recommend that we implement Universal Design for Learning, or UDL, which builds flexibility into the curriculum for all students, reducing the need for retrofitted, specialized accommodations."`
+      },
+      7: {
+        timing: "⏱️ Timing: (12:30 - 15:00) [Interactive Activity]",
+        script: `"To conclude our micro-teach session, we move from theory to interactive pledge. On this dashboard, you can build your personal Commitment-to-Practice Plan. Please select the low-barrier classroom adjustments you commit to executing in your courses this upcoming week. As you click on each strategy, the planner visualizes how these support structures minimize cognitive load, bypass the Double Empathy communication barrier, and stave off sensory fatigue. Let us open the floor to questions and gather your reflections on your generated pledges."`
+      }
+    };
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Toggle interactive starter cards
+    function toggleStarterCard(cardNumber) {
+      const card = document.getElementById(`starter-card-${cardNumber}`);
+      const answer = document.getElementById(`starter-answer-${cardNumber}`);
+      const badge = document.getElementById(`starter-badge-${cardNumber}`);
+
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        card.classList.add('border-brand-teal', 'bg-slate-800');
+        badge.innerText = "Analyzed";
+        badge.className = "p-1.5 bg-brand-teal text-white text-xs font-bold shrink-0 rounded-lg";
+      } else {
+        answer.classList.add('hidden');
+        card.classList.remove('border-brand-teal', 'bg-slate-800');
+        badge.innerText = "Click To Reveal";
+        badge.className = "p-1.5 bg-slate-700 text-slate-400 text-xs font-bold shrink-0 rounded-lg";
+      }
+    }
+
+    // Toggle Interactive Plenary Pledges
+    function selectStrategy(strategyId) {
+      const button = document.getElementById(`btn-${strategyId}`);
+      const checkbox = document.getElementById(`chk-${strategyId}`);
+
+      if (selectedStrategies.has(strategyId)) {
+        selectedStrategies.delete(strategyId);
+        button.classList.remove('border-brand-teal', 'border-brand-indigo', 'border-brand-purple', 'bg-slate-800');
+        checkbox.classList.add('text-transparent');
+        checkbox.classList.remove('bg-brand-teal', 'bg-brand-indigo', 'bg-brand-purple', 'text-white');
+      } else {
+        selectedStrategies.add(strategyId);
+        if (strategyId === 'visual') {
+          button.classList.add('border-brand-teal', 'bg-slate-800');
+          checkbox.classList.add('bg-brand-teal', 'text-white');
+        } else if (strategyId === 'transitions') {
+          button.classList.add('border-brand-indigo', 'bg-slate-800');
+          checkbox.classList.add('bg-brand-indigo', 'text-white');
+        } else if (strategyId === 'groups') {
+          button.classList.add('border-brand-purple', 'bg-slate-800');
+          checkbox.classList.add('bg-brand-purple', 'text-white');
+        }
+        checkbox.classList.remove('text-transparent');
+      }
+
+      updateVisualPlanner();
+    }
+
+    function updateVisualPlanner() {
+      const placeholder = document.getElementById('plan-placeholder');
+      const output = document.getElementById('plan-output');
+      const list = document.getElementById('plan-items-list');
+
+      list.innerHTML = "";
+
+      if (selectedStrategies.size === 0) {
+        placeholder.classList.remove('hidden');
+        output.classList.add('hidden');
+      } else {
+        placeholder.classList.add('hidden');
+        output.classList.remove('hidden');
+
+        selectedStrategies.forEach(strategy => {
+          const li = document.createElement('li');
+          li.className = "flex items-start gap-2 bg-slate-800 p-2.5 rounded border border-slate-700/60";
+          
+          if (strategy === 'visual') {
+            li.innerHTML = `<span class="text-brand-teal font-bold shrink-0">✔</span> <div><strong>Visual Scaffolding:</strong> Checklists & Visual bullet structures are set up natively in instructions.</div>`;
+          } else if (strategy === 'transitions') {
+            li.innerHTML = `<span class="text-brand-indigo font-bold shrink-0">✔</span> <div><strong>Structured Transition Planning:</strong> Time warnings set prior to class routine shifts.</div>`;
+          } else if (strategy === 'groups') {
+            li.innerHTML = `<span class="text-brand-purple font-bold shrink-0">✔</span> <div><strong>Empathetic Social Settings:</strong> Teams pre-assigned with explicit functional role descriptors.</div>`;
+          }
+          list.appendChild(li);
+        });
+      }
+    }
+
+    function saveCommitment() {
+      if (selectedStrategies.size === 0) {
+        return; // No selections
+      }
+      const notify = document.getElementById('save-notification');
+      notify.classList.remove('hidden');
+    }
+
+    function closeNotification() {
+      const notify = document.getElementById('save-notification');
+      notify.classList.add('hidden');
+    }
+
+    // Toggle Presenter notes drawer
+    function togglePresenterNotes() {
+      const drawer = document.getElementById('notes-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // Dynamic Navigation System
+    function updateSlide() {
+      // Hide all slides
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('slide-active');
+        slide.classList.add('hidden');
+      });
+
+      // Show current slide
+      const activeSlide = document.getElementById(`slide-${currentSlideIndex}`);
+      if (activeSlide) {
+        activeSlide.classList.add('slide-active');
+        activeSlide.classList.remove('hidden');
+      }
+
+      // Update Pagination Dots
+      updatePaginationDots();
+
+      // Update progress bar
+      const percentage = (currentSlideIndex / totalSlidesCount) * 100;
+      document.getElementById('progress-bar').style.width = `${percentage}%`;
+
+      // Update status text
+      document.getElementById('slide-number').innerText = `Slide ${currentSlideIndex} of ${totalSlidesCount}`;
+
+      // Update Speaker Notes Script text dynamically
+      document.getElementById('notes-timing').innerText = slidesData[currentSlideIndex].timing;
+      document.getElementById('notes-content-text').innerText = slidesData[currentSlideIndex].script;
+    }
+
+    function createPaginationDots() {
+      const container = document.getElementById('pagination-dots');
+      container.innerHTML = "";
+      for (let i = 1; i <= totalSlidesCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = "w-3 h-3 rounded-full transition-all focus:outline-none";
+        dot.setAttribute('aria-label', `Maps to slide ${i}`);
+        dot.onclick = () => {
+          currentSlideIndex = i;
+          updateSlide();
+        };
+        container.appendChild(dot);
+      }
+      updatePaginationDots();
+    }
+
+    function updatePaginationDots() {
+      const dots = document.getElementById('pagination-dots').children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i + 1 === currentSlideIndex) {
+          dots[i].className = "w-6 h-3 rounded-full bg-brand-teal transition-all";
+        } else {
+          dots[i].className = "w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-600 transition-all";
+        }
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlideIndex < totalSlidesCount) {
+        currentSlideIndex++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIndex > 1) {
+        currentSlideIndex--;
+        updateSlide();
+      }
+    }
+
+    // App Initialization
+    window.onload = function() {
+      createPaginationDots();
+      updateSlide();
+    }
+  </script>
+
+</body>
+</html>
